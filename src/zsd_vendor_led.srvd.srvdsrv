@@ -1,0 +1,6 @@
+@EndUserText.label: 'Vendor Ledger Report Service'
+define service ZSD_VENDOR_LED {
+  expose ZC_VENDOR_LED       as VendorLedgerReport;
+  expose ZCE_VENDOR_OPEN_BAL as VendorOpeningBalance;
+  expose ZI_VENDOR_HEADER    as VendorHeader;
+}

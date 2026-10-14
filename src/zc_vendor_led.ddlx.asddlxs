@@ -1,0 +1,96 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo: {
+  typeName: 'Vendor Ledger Item',
+  typeNamePlural: 'Vendor Ledger Items'
+}
+annotate entity ZC_VENDOR_LED with
+{
+  @UI.selectionField: [{ position: 10 }]
+  @UI.lineItem: [{ position: 150, label: 'Company Code' }]
+  CompanyCode;
+
+  @UI.hidden: true
+  FiscalYear;
+
+  @UI.lineItem: [{ position: 30, label: 'Journal Entry No.' }]
+  AccountingDocument;
+
+  @UI.hidden: true
+  AccountingDocumentItem;
+
+  @UI.lineItem: [{ position: 20, label: 'Document Type' }]
+  AccountingDocumentType;
+
+
+  
+  @UI.selectionField: [{ position: 30 }]
+@Consumption.filter: {
+  selectionType: #INTERVAL,
+  multipleSelections: false
+}
+@UI.lineItem: [{ position: 15, label: 'Posting Date' }]
+PostingDate;
+
+ 
+  @Consumption.filter: {
+    selectionType: #INTERVAL,
+    multipleSelections: false
+  }
+  @UI.lineItem: [{ position: 10, label: 'Document Date' }]
+  DocumentDate;
+
+  @UI.lineItem: [{ position: 40, label: 'Purchase Order No.' }]
+  PurchasingDocument;
+
+  @UI.selectionField: [{ position: 20 }]
+  @Consumption.filter: {
+    selectionType: #SINGLE,
+    multipleSelections: false
+  }
+  @UI.lineItem: [{ position: 160, label: 'Supplier' }]
+  Supplier;
+
+  @UI.lineItem: [{ position: 50, label: 'Invoice Reference' }]
+  DocumentReferenceID;
+
+  @UI.lineItem: [{ position: 60, label: 'Narration' }]
+  DocumentItemText;
+
+  @UI.hidden: true
+  TransactionCurrency;
+
+  @UI.lineItem: [{ position: 70, label: 'Withholding Amount' }]
+  WithholdingTaxAmount;
+
+  @UI.lineItem: [{ position: 80, label: 'Payment Terms' }]
+  PaymentTerms;
+  
+  @UI.lineItem: [{ position: 85, label: 'Payment Terms Text' }]
+  PaymentTermText;
+
+  @UI.lineItem: [{ position: 90, label: 'Tax Code' }]
+  TaxCode;
+  
+   @UI.lineItem: [{ position: 95, label: 'Tax Code Text' }]
+  TaxCodeText;
+  
+
+  @UI.lineItem: [{ position: 100, label: 'Withholding Tax Rate' }]
+  WithholdingTaxPercent;
+
+  @UI.lineItem: [{ position: 110, label: 'Withholding Tax Type' }]
+  WithholdingTaxType;
+  
+    @UI.lineItem: [{ position: 115, label: 'TDS Section' }]
+  TDSSection;
+  
+
+  @UI.lineItem: [{ position: 140, label: 'Currency' }]
+  CompanyCodeCurrency;
+
+  @UI.lineItem: [{ position: 120, label: 'Debit Amount' }]
+  DebitAmountInCoCodeCrcy;
+
+  @UI.lineItem: [{ position: 130, label: 'Credit Amount' }]
+  CreditAmountInCoCodeCrcy;
+}
